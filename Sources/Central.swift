@@ -162,6 +162,12 @@ extension Central {
         return self.centralProxy.centralManager.isScanning
     }
     
+    /// Proxy to authorization
+    @available(iOS 13.0, *)
+    public var authorization: CBManagerAuthorization {
+        return self.centralProxy.centralManager.authorization
+    }
+    
     /// Attempts to return the periperals from a list of identifier "UUID"s
     public func retrievePeripherals(withUUIDs uuids: [CBUUIDConvertible]) -> [Peripheral] {
         let uuids = uuids.compactMap { UUID(uuidString: $0.CBUUIDRepresentation.uuidString)  }
