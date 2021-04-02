@@ -67,6 +67,11 @@ public var isScanning: Bool {
     return Central.sharedInstance.isScanning
 }
 
+@available(iOS 13.0, *)
+public var authorization: CBManagerAuthorization {
+    return Central.sharedInstance.authorization
+}
+
 /// Attempts to return the periperals from a list of identifier "UUID"s
 public func retrievePeripherals(withUUIDs uuids: [UUID]) -> [Peripheral] {
     return Central.sharedInstance.retrievePeripherals(withUUIDs: uuids)
